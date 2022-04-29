@@ -4,8 +4,11 @@ file { '/usr/local/bin/run-puppet':
   mode   => '0755',
 }
 
-schedule { 'run-puppet':
-  command => '/usr/local/bin/run-puppet',
+schedule { 'every15min':
   period => hourly,
   repeat => 4,
+}
+
+exec { "/usr/local/bin/run-puppet": 
+  schedule => 'every15min'
 }
