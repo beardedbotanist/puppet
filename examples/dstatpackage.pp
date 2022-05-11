@@ -1,0 +1,3 @@
+package { 'dstat':
+  ensure => installed,
+}
